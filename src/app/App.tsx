@@ -1,16 +1,12 @@
 import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '../router';
 import './styles/index.scss';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
 
 const App = () => {
   return (
     <div className="app">
-      <Header />
-      <main>
-        <div>Start</div>
-      </main>
-      <Footer />
+      <RouterProvider router={router} />
     </div>
   );
 };
