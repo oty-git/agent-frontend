@@ -1,0 +1,172 @@
+.footer {
+  background: var(--bg-color);
+  border-top: 1px solid var(--inverted-primary-color);
+  margin-top: auto;
+  padding: 40px 0 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 30px;
+
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.logo {
+  h3 {
+    font: var(--font-l);
+    color: var(--primary-color);
+    margin: 0 0 12px;
+  }
+}
+
+.description {
+  font: var(--font-m);
+  color: var(--secondary-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.linkGroup {
+  h4 {
+    font: var(--font-m);
+    color: var(--primary-color);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font: var(--font-s);
+  color: var(--secondary-color);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--inverted-primary-color);
+
+  @media (width <= 768px) {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+.copyright {
+  p {
+    font: var(--font-s);
+    color: var(--secondary-color);
+    margin: 0;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  background: none;
+  border: 1px solid var(--inverted-primary-color);
+  padding: 8px 16px;
+  font: var(--font-s);
+  color: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--inverted-primary-color);
+    border-color: var(--primary-color);
+  }
+}
+
+// Redesigned theme support
+:global(.app_redesigned) .footer {
+  background: var(--bg-redesigned);
+  border-top: 1px solid var(--accent-redesigned);
+}
+
+:global(.app_redesigned) .logo h3 {
+  color: var(--text-redesigned);
+  font: var(--font-l-redesigned);
+}
+
+:global(.app_redesigned) .description {
+  color: var(--hint-redesigned);
+  font: var(--font-m-redesigned);
+}
+
+:global(.app_redesigned) .linkGroup h4 {
+  color: var(--text-redesigned);
+  font: var(--font-m-redesigned);
+}
+
+:global(.app_redesigned) .link {
+  color: var(--hint-redesigned);
+  font: var(--font-s-redesigned);
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
+}
+
+:global(.app_redesigned) .bottom {
+  border-top: 1px solid var(--accent-redesigned);
+}
+
+:global(.app_redesigned) .copyright p {
+  color: var(--hint-redesigned);
+  font: var(--font-s-redesigned);
+}
+
+:global(.app_redesigned) .socialLink {
+  border-color: var(--accent-redesigned);
+  color: var(--hint-redesigned);
+  font: var(--font-s-redesigned);
+
+  &:hover {
+    background: var(--accent-redesigned);
+    color: var(--bg-redesigned);
+  }
+}
