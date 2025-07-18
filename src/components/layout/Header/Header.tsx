@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
@@ -10,24 +11,31 @@ const Header = memo(({ className = '' }: HeaderProps) => {
     <header className={`${styles.header} ${className}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <h1>Agent Frontend</h1>
+          <Link to="/">
+            <h1>Football Trials</h1>
+          </Link>
         </div>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li>
-              <button type="button" className={styles.navLink}>
+              <Link to="/" className={styles.navLink}>
                 Home
-              </button>
+              </Link>
             </li>
             <li>
-              <button type="button" className={styles.navLink}>
+              <Link to="/trials" className={styles.navLink}>
+                Trials
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className={styles.navLink}>
                 About
-              </button>
+              </Link>
             </li>
             <li>
-              <button type="button" className={styles.navLink}>
+              <Link to="/contact" className={styles.navLink}>
                 Contact
-              </button>
+              </Link>
             </li>
           </ul>
         </nav>
