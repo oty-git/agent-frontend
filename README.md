@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Agent Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React TypeScript frontend application for the Agent project.
+
+**Tech Stack:** React 19.1.0 • TypeScript 4.9.5 • Webpack (ejected CRA) • ESLint • Prettier • Stylelint
 
 ## Available Scripts
 
