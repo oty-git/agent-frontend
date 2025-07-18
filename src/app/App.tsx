@@ -1,8 +1,18 @@
-import React, { memo } from 'react';
+import React from 'react';
 import './styles/index.scss';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 
-const App = memo(() => {
-  return <div className="app">Start</div>;
-});
+const App = () => {
+  return (
+    <div className="app">
+      <Header />
+      <main>
+        <div>Start</div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

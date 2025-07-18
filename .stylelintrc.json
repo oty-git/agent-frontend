@@ -1,5 +1,6 @@
 {
-  "extends": ["stylelint-config-standard"],
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-scss"],
   "rules": {
     "color-named": "never",
     "selector-class-pattern": null,
@@ -10,6 +11,13 @@
       {
         "except": ["first-nested"],
         "ignore": ["after-comment"]
+      }
+    ],
+    "no-invalid-double-slash-comments": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
       }
     ]
   },
