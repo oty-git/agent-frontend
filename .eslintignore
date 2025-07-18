@@ -1,0 +1,9 @@
+build/
+dist/
+node_modules/
+coverage/
+*.min.js
+*.bundle.js
+public/
+config/
+scripts/
