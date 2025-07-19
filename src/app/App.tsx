@@ -1,14 +1,11 @@
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
-import { router } from '../router';
+import { useTheme } from '../hooks/useTheme/useTheme';
 import './styles/index.scss';
 
 const App = () => {
-  return (
-    <div className="app">
-      <RouterProvider router={router} />
-    </div>
-  );
+  const { theme } = useTheme();
+
+  return <div className={`app ${theme}`} />;
 };
 
 export default App;

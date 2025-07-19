@@ -1,0 +1,77 @@
+/* ToggleTheme Button Styles */
+.toggleTheme {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  min-width: 90px;
+  justify-content: center;
+}
+
+.toggleTheme:hover {
+  background: var(--bg-color);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.toggleTheme:active {
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.toggleTheme:hover .icon {
+  transform: scale(1.1);
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .toggleTheme {
+    min-width: auto;
+    padding: 6px 10px;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* Theme-specific styles */
+:global(.app_orange_theme) .toggleTheme {
+  border-color: var(--secondary-color);
+}
+
+:global(.app_dark_theme) .toggleTheme {
+  border-color: var(--inverted-primary-color);
+}
+
+:global(.app_orange_theme) .toggleTheme:hover {
+  border-color: var(--primary-color);
+}
+
+:global(.app_dark_theme) .toggleTheme:hover {
+  border-color: var(--inverted-secondary-color);
+  box-shadow: 0 2px 8px rgb(255 255 255 / 10%);
+}

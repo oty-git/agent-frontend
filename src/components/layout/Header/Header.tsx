@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
+import ToggleTheme from '../../ui/ToggleTheme';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
@@ -39,6 +40,9 @@ const Header = memo(({ className = '' }: HeaderProps) => {
             </li>
           </ul>
         </nav>
+        <div className={styles.actions}>
+          <ToggleTheme />
+        </div>
       </div>
     </header>
   );

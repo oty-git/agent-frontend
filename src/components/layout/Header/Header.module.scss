@@ -85,3 +85,29 @@
     color: var(--accent-redesigned);
   }
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .navList {
+    gap: 16px;
+  }
+
+  .navLink {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+}
