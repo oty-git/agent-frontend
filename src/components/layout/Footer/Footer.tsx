@@ -13,7 +13,7 @@ const Footer = memo(({ className = '' }: FooterProps) => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.logo}>
-            <h3>Agent Frontend</h3>
+            <h3>Football Trials</h3>
             <p className={styles.description}>
               A modern React application with TypeScript and SCSS.
             </p>
