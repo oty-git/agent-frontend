@@ -12,7 +12,12 @@ const TrialsPage: React.FC = () => {
       <div className={styles.filters}>
         <div className={styles.filterGroup}>
           <label htmlFor="location">Location</label>
-          <select id="location" className={styles.select}>
+          <select
+            id="location"
+            className={styles.select}
+            value={location}
+            onChange={handleLocationChange}
+          >
             <option value="">All locations</option>
             <option value="london">London</option>
             <option value="manchester">Manchester</option>
