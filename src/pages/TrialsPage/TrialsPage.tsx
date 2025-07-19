@@ -73,7 +73,14 @@ const TrialsPage: React.FC = () => {
             professional scouts. This is an excellent opportunity for young
             players to be assessed by one of England's top clubs.
           </p>
-          <button className={styles.applyButton}>Apply Now</button>
+          <button
+            className={styles.applyButton}
+            onClick={() => alert('Applied for Manchester United Academy Trial')}
+            aria-label="Apply for Manchester United Academy Trial"
+            disabled={false}
+          >
+            Apply Now
+          </button>
         </div>
 
         <div className={styles.trialCard}>
