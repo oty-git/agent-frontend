@@ -15,7 +15,8 @@ const Footer = memo(({ className = '' }: FooterProps) => {
           <div className={styles.logo}>
             <h3>Football Trials</h3>
             <p className={styles.description}>
-              Connecting aspiring football players with trial opportunities worldwide.
+              Connecting aspiring football players with trial opportunities
+              worldwide.
             </p>
           </div>
 
