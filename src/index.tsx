@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
-import { router } from './router';
+import { BrowserRouter } from 'react-router-dom';
+import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import ThemeProvider from './theme/ThemeProvider';
 
@@ -11,7 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <RouterProvider router={router} />
+      <BrowserRouter basename="/agent-frontend">
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );
