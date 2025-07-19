@@ -15,8 +15,8 @@ const TrialsPage: React.FC = () => {
           <select
             id="location"
             className={styles.select}
-            value={location}
-            onChange={handleLocationChange}
+            value={'location'}
+            onChange={() => {}}
           >
             <option value="">All locations</option>
             <option value="london">London</option>

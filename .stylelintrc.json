@@ -14,6 +14,7 @@
       }
     ],
     "no-invalid-double-slash-comments": null,
+    "media-feature-range-notation": "prefix",
     "selector-pseudo-class-no-unknown": [
       true,
       {
