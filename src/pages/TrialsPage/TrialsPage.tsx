@@ -82,7 +82,6 @@ const TrialsPage: React.FC = () => {
             className={styles.applyButton}
             onClick={() => alert('Applied for Manchester United Academy Trial')}
             aria-label="Apply for Manchester United Academy Trial"
-            disabled={false}
           >
             Apply Now
           </button>
