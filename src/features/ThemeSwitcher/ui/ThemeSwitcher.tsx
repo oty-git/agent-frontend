@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
-import { useTheme } from '../../../hooks/useTheme/useTheme';
+import { useTheme } from '../../../shared/lib/hooks/useTheme/useTheme';
 import { Theme } from '../../../shared/const/theme';
-import styles from './ToggleTheme.module.scss';
+import styles from './ThemeSwitcher.module.scss';
 
 interface ToggleThemeProps {
   className?: string;
 }
 
-const ToggleTheme = memo(({ className = '' }: ToggleThemeProps) => {
+const ThemeSwitcher = memo(({ className = '' }: ToggleThemeProps) => {
   const { theme, toggleTheme } = useTheme();
 
   const getThemeIcon = () => {
@@ -48,6 +48,6 @@ const ToggleTheme = memo(({ className = '' }: ToggleThemeProps) => {
   );
 });
 
-ToggleTheme.displayName = 'ToggleTheme';
+ThemeSwitcher.displayName = 'ThemeSwitcher';
 
-export default ToggleTheme;
+export default ThemeSwitcher;

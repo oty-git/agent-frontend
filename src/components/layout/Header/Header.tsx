@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import ToggleTheme from '../../ui/ToggleTheme';
+import ToggleTheme from '../../../features/ThemeSwitcher';
 import styles from './Header.module.scss';
 
 interface HeaderProps {
