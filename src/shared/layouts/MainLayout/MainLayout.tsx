@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../../components/layout/Header';
-import Footer from '../../components/layout/Footer';
+import Header from '../../../wigets/Header';
+import Footer from '../../../wigets/Footer';
 import styles from './MainLayout.module.scss';
 
 const MainLayout: React.FC = () => {
