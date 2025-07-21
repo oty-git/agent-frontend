@@ -93,24 +93,24 @@
   margin-top: 8px;
 }
 
-.level.academy {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  color: white;
+.level.amateur {
+  background: linear-gradient(135deg, #7c2d12, #a16207);
+  color: #fff;
 }
 
 .level.semi-professional {
   background: linear-gradient(135deg, #059669, #0d9488);
-  color: white;
+  color: #fff;
 }
 
 .level.professional {
   background: linear-gradient(135deg, #dc2626, #ea580c);
-  color: white;
+  color: #fff;
 }
 
-.level.amateur {
-  background: linear-gradient(135deg, #7c2d12, #a16207);
-  color: white;
+.level.academy {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
 }
 
 .subtitle {
@@ -142,7 +142,7 @@
 .section h2 {
   font-size: 1.5rem;
   color: var(--primary-color);
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 12px;
 }
@@ -170,13 +170,35 @@
   font-size: 1rem;
 }
 
+.applyCard {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color-light);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.applyCard h3 {
+  font-size: 1.5rem;
+  margin: 0 0 12px;
+}
+
+.applyCard p {
+  margin: 0 0 20px;
+  opacity: 0.9;
+}
+
 .description {
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
 .description p {
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
 }
 
 .description p:last-child {
@@ -215,32 +237,10 @@
   gap: 24px;
 }
 
-.applyCard {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  color: var(--text-color-light);
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.applyCard h3 {
-  font-size: 1.5rem;
-  margin: 0 0 12px 0;
-}
-
-.applyCard p {
-  margin: 0 0 20px 0;
-  opacity: 0.9;
-}
-
 .applyButton {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(255 255 255 / 20%);
   color: var(--text-color-light);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgb(255 255 255 / 30%);
   padding: 14px 28px;
   border-radius: 8px;
   font-size: 1rem;
@@ -252,14 +252,14 @@
 }
 
 .applyButton:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgb(255 255 255 / 30%);
+  border-color: rgb(255 255 255 / 50%);
   transform: translateY(-2px);
 }
 
 .applyNote {
   font-size: 0.8rem;
-  margin: 16px 0 0 0;
+  margin: 16px 0 0;
   opacity: 0.8;
 }
 
@@ -275,7 +275,7 @@
 .contactInfo h3 {
   font-size: 1.2rem;
   color: var(--primary-color);
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
 }
 
 .clubDetails,
@@ -390,14 +390,14 @@
   border-color: var(--dark-border);
 }
 
+:global(.app.orange) .applyCard {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+}
+
 :global(.app.orange) .level.academy {
   background: linear-gradient(135deg, #ea580c, #dc2626);
 }
 
 :global(.app.orange) .level.semi-professional {
   background: linear-gradient(135deg, #c2410c, #9a3412);
-}
-
-:global(.app.orange) .applyCard {
-  background: linear-gradient(135deg, #ea580c, #dc2626);
 }

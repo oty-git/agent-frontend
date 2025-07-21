@@ -202,7 +202,8 @@ export const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       className={classNames(styles.button, styles[variant], styles[size], {
         [styles.disabled]: disabled,
-      })}>
+      })}
+    >
       {children}
     </button>
   );
@@ -300,7 +301,7 @@ export const useAuth = () => {
     loading,
     hasRole: (role: string) => user?.roles?.includes(role) || false,
     hasAnyRole: (roles: string[]) =>
-      roles.some((role) => user?.roles?.includes(role)) || false,
+      roles.some(role => user?.roles?.includes(role)) || false,
   };
 };
 ```
@@ -362,7 +363,7 @@ export const userSlice = createSlice({
       state.isAuthenticated = true;
       state.loading = false;
     },
-    clearUser: (state) => {
+    clearUser: state => {
       state.currentUser = null;
       state.isAuthenticated = false;
       state.loading = false;
@@ -465,40 +466,34 @@ export const LoginForm: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <h2 className={styles.title}>Вход в систему</h2>
 
         <div className={styles.field}>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor="email">Email</label>
           <input
-            id='email'
-            type='email'
+            id="email"
+            type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             required
             className={styles.input}
           />
         </div>
 
         <div className={styles.field}>
-          <label htmlFor='password'>Пароль</label>
+          <label htmlFor="password">Пароль</label>
           <input
-            id='password'
-            type='password'
+            id="password"
+            type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e => setPassword(e.target.value)}
             required
             className={styles.input}
           />
         </div>
 
-        <Button
-          type='submit'
-          variant='primary'
-          size='large'
-          disabled={loading}>
+        <Button type="submit" variant="primary" size="large" disabled={loading}>
           {loading ? 'Вход...' : 'Войти'}
         </Button>
       </form>
@@ -595,19 +590,17 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({ onSearch }) => {
 
   return (
     <div className={styles.container}>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <h3>Поиск проб</h3>
 
         <div className={styles.row}>
           <div className={styles.field}>
             <label>Локация</label>
             <input
-              type='text'
-              placeholder='Город или регион'
+              type="text"
+              placeholder="Город или регион"
               value={filters.location || ''}
-              onChange={(e) =>
+              onChange={e =>
                 setFilters({ ...filters, location: e.target.value })
               }
               className={styles.input}
@@ -618,14 +611,13 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({ onSearch }) => {
             <label>Уровень</label>
             <select
               value={filters.level || ''}
-              onChange={(e) =>
-                setFilters({ ...filters, level: e.target.value })
-              }
-              className={styles.select}>
-              <option value=''>Любой</option>
-              <option value='beginner'>Начинающий</option>
-              <option value='intermediate'>Средний</option>
-              <option value='advanced'>Продвинутый</option>
+              onChange={e => setFilters({ ...filters, level: e.target.value })}
+              className={styles.select}
+            >
+              <option value="">Любой</option>
+              <option value="beginner">Начинающий</option>
+              <option value="intermediate">Средний</option>
+              <option value="advanced">Продвинутый</option>
             </select>
           </div>
         </div>
@@ -635,32 +627,31 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({ onSearch }) => {
             <label>Возрастная группа</label>
             <select
               value={filters.ageGroup || ''}
-              onChange={(e) =>
+              onChange={e =>
                 setFilters({ ...filters, ageGroup: e.target.value })
               }
-              className={styles.select}>
-              <option value=''>Любая</option>
-              <option value='u16'>До 16 лет</option>
-              <option value='u18'>До 18 лет</option>
-              <option value='u21'>До 21 года</option>
-              <option value='senior'>Взрослые</option>
+              className={styles.select}
+            >
+              <option value="">Любая</option>
+              <option value="u16">До 16 лет</option>
+              <option value="u18">До 18 лет</option>
+              <option value="u21">До 21 года</option>
+              <option value="senior">Взрослые</option>
             </select>
           </div>
 
           <div className={styles.field}>
             <label>Дата</label>
             <input
-              type='date'
+              type="date"
               value={filters.date || ''}
-              onChange={(e) => setFilters({ ...filters, date: e.target.value })}
+              onChange={e => setFilters({ ...filters, date: e.target.value })}
               className={styles.input}
             />
           </div>
         </div>
 
-        <Button
-          type='submit'
-          variant='primary'>
+        <Button type="submit" variant="primary">
           Найти пробы
         </Button>
       </form>
@@ -760,16 +751,12 @@ export const HomePage: React.FC = () => {
           <p>Маркетплейс футбольных проб для игроков и тренеров</p>
           <div className={styles.heroActions}>
             <Link to={ROUTES.TRIALS}>
-              <Button
-                variant='primary'
-                size='large'>
+              <Button variant="primary" size="large">
                 Найти пробы
               </Button>
             </Link>
             <Link to={ROUTES.SIGN_UP}>
-              <Button
-                variant='outline'
-                size='large'>
+              <Button variant="outline" size="large">
                 Зарегистрироваться
               </Button>
             </Link>
@@ -940,10 +927,8 @@ export const TrialsPage: React.FC = () => {
       <SearchFilters onSearch={handleSearch} />
 
       <div className={styles.trials}>
-        {trials.map((trial) => (
-          <div
-            key={trial.id}
-            className={styles.trialCard}>
+        {trials.map(trial => (
+          <div key={trial.id} className={styles.trialCard}>
             <h3>{trial.title}</h3>
             <p className={styles.club}>{trial.clubName}</p>
             <div className={styles.details}>
@@ -1106,9 +1091,7 @@ export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link
-          to={ROUTES.HOME}
-          className={styles.logo}>
+        <Link to={ROUTES.HOME} className={styles.logo}>
           ⚽ FootballTrials
         </Link>
 
@@ -1122,21 +1105,19 @@ export const Header: React.FC = () => {
           {isAuthenticated ? (
             <div className={styles.userMenu}>
               <Link to={ROUTES.DASHBOARD}>
-                <Button variant='secondary'>Панель</Button>
+                <Button variant="secondary">Панель</Button>
               </Link>
-              <Button
-                variant='outline'
-                onClick={handleLogout}>
+              <Button variant="outline" onClick={handleLogout}>
                 Выйти
               </Button>
             </div>
           ) : (
             <div className={styles.authButtons}>
               <Link to={ROUTES.SIGN_IN}>
-                <Button variant='outline'>Войти</Button>
+                <Button variant="outline">Войти</Button>
               </Link>
               <Link to={ROUTES.SIGN_UP}>
-                <Button variant='primary'>Регистрация</Button>
+                <Button variant="primary">Регистрация</Button>
               </Link>
             </div>
           )}
@@ -1245,7 +1226,8 @@ const LoadingSpinner: React.FC = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '50vh',
-    }}>
+    }}
+  >
     Загрузка...
   </div>
 );
@@ -1255,18 +1237,9 @@ export const AppRouter: React.FC = () => {
     <Suspense fallback={<LoadingSpinner />}>
       <Routes>
         {/* Публичные маршруты */}
-        <Route
-          path={ROUTES.HOME}
-          element={<HomePage />}
-        />
-        <Route
-          path={ROUTES.TRIALS}
-          element={<TrialsPage />}
-        />
-        <Route
-          path={ROUTES.SIGN_IN}
-          element={<AuthPage />}
-        />
+        <Route path={ROUTES.HOME} element={<HomePage />} />
+        <Route path={ROUTES.TRIALS} element={<TrialsPage />} />
+        <Route path={ROUTES.SIGN_IN} element={<AuthPage />} />
 
         {/* Пока что простые маршруты без защиты */}
         <Route
@@ -1281,7 +1254,7 @@ export const AppRouter: React.FC = () => {
 
         {/* 404 */}
         <Route
-          path='*'
+          path="*"
           element={
             <div style={{ textAlign: 'center', padding: '2rem' }}>
               <h1>404 - Страница не найдена</h1>
@@ -1342,9 +1315,9 @@ export const App: React.FC = () => {
   return (
     <StoreProvider>
       <BrowserRouter>
-        <div className='app'>
+        <div className="app">
           <Header />
-          <main className='main'>
+          <main className="main">
             <AppRouter />
           </main>
         </div>
@@ -1364,8 +1337,8 @@ export const App: React.FC = () => {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f8f9fa;
