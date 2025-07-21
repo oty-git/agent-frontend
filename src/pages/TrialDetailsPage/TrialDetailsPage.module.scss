@@ -389,15 +389,3 @@
   background: var(--dark-bg-secondary);
   border-color: var(--dark-border);
 }
-
-:global(.app.orange) .applyCard {
-  background: linear-gradient(135deg, #ea580c, #dc2626);
-}
-
-:global(.app.orange) .level.academy {
-  background: linear-gradient(135deg, #ea580c, #dc2626);
-}
-
-:global(.app.orange) .level.semi-professional {
-  background: linear-gradient(135deg, #c2410c, #9a3412);
-}

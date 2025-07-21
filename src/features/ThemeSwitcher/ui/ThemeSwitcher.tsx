@@ -14,8 +14,6 @@ const ThemeSwitcher = memo(({ className = '' }: ToggleThemeProps) => {
     switch (theme) {
       case Theme.DARK:
         return '🌙';
-      case Theme.ORANGE:
-        return '🟠';
       case Theme.LIGHT:
       default:
         return '☀️';
@@ -26,8 +24,6 @@ const ThemeSwitcher = memo(({ className = '' }: ToggleThemeProps) => {
     switch (theme) {
       case Theme.DARK:
         return 'Dark';
-      case Theme.ORANGE:
-        return 'Orange';
       case Theme.LIGHT:
       default:
         return 'Light';

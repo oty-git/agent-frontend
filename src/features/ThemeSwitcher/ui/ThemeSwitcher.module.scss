@@ -59,16 +59,8 @@
 }
 
 /* Theme-specific styles */
-:global(.app_orange_theme) .toggleTheme {
-  border-color: var(--secondary-color);
-}
-
 :global(.app_dark_theme) .toggleTheme {
   border-color: var(--inverted-primary-color);
-}
-
-:global(.app_orange_theme) .toggleTheme:hover {
-  border-color: var(--primary-color);
 }
 
 :global(.app_dark_theme) .toggleTheme:hover {
