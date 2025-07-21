@@ -29,7 +29,6 @@ const TrialCard: React.FC<TrialCardProps> = ({
   onApply,
   hasDetailsPage = false,
 }) => {
-  console.log('🚀 ~ hasDetailsPage:', hasDetailsPage);
   const handleApply = () => {
     if (onApply) {
       onApply();
