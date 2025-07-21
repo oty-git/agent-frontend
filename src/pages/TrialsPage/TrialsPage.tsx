@@ -1,8 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { getTrials } from '../../shared/api/trials';
+import { TrialCard, Trial } from '../../entities/trial';
 import styles from './TrialsPage.module.scss';
 
 const TrialsPage: React.FC = () => {
+  const [trials, setTrials] = useState<Trial[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadTrials = async () => {
+      try {
+        setLoading(true);
+        const trialsData = await getTrials();
+        setTrials(trialsData);
+      } catch (error) {
+        console.error('Failed to load trials:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadTrials();
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -51,159 +71,30 @@ const TrialsPage: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.trials}>
-        <div className={styles.trialCard}>
-          <div className={styles.trialHeader}>
-            <h3>
-              <Link
-                to="/trials/manchester-united-academy"
-                className={styles.trialTitle}
-              >
-                Manchester United Academy Trial
-              </Link>
-            </h3>
-            <span className={styles.level}>Academy</span>
-          </div>
-          <div className={styles.trialInfo}>
-            <p>
-              <strong>Date:</strong> Saturday, 15th February 2025
-            </p>
-            <p>
-              <strong>Time:</strong> 10:00 AM - 4:00 PM
-            </p>
-            <p>
-              <strong>Location:</strong> Carrington Training Ground, Manchester
-            </p>
-            <p>
-              <strong>Age Group:</strong> Under 18
-            </p>
-            <p>
-              <strong>Cost:</strong> £50
-            </p>
-          </div>
-          <p className={styles.description}>
-            Join the Manchester United Academy trial and showcase your talent to
-            professional scouts. This is an excellent opportunity for young
-            players to be assessed by one of England's top clubs.
-          </p>
-          <div className={styles.buttonGroup}>
-            <Link
-              to="/trials/manchester-united-academy"
-              className={styles.viewButton}
-            >
-              View Details
-            </Link>
-            <button
-              className={styles.applyButton}
-              onClick={() =>
-                alert('Applied for Manchester United Academy Trial')
-              }
-              aria-label="Apply for Manchester United Academy Trial"
-            >
-              Apply Now
-            </button>
-          </div>
+      {loading ? (
+        <div className={styles.loading}>
+          <p>Loading trials...</p>
         </div>
-
-        <div className={styles.trialCard}>
-          <div className={styles.trialHeader}>
-            <h3>
-              <Link to="/trials/city-fc-open" className={styles.trialTitle}>
-                City FC Open Trial
-              </Link>
-            </h3>
-            <span className={styles.level}>Semi-Professional</span>
-          </div>
-          <div className={styles.trialInfo}>
-            <p>
-              <strong>Date:</strong> Sunday, 23rd February 2025
-            </p>
-            <p>
-              <strong>Time:</strong> 2:00 PM - 5:00 PM
-            </p>
-            <p>
-              <strong>Location:</strong> Etihad Campus, Manchester
-            </p>
-            <p>
-              <strong>Age Group:</strong> Open Age
-            </p>
-            <p>
-              <strong>Cost:</strong> £30
-            </p>
-          </div>
-          <p className={styles.description}>
-            Open trial for ambitious players looking to join a competitive
-            semi-professional team. All positions available with immediate
-            opportunities for the right candidates.
-          </p>
-          <div className={styles.buttonGroup}>
-            <Link to="/trials/city-fc-open" className={styles.viewButton}>
-              View Details
-            </Link>
-            <button className={styles.applyButton}>Apply Now</button>
-          </div>
+      ) : (
+        <div className={styles.trials}>
+          {trials.map((trial, index) => (
+            <TrialCard
+              key={trial.id || index}
+              id={trial.id}
+              title={trial.title}
+              level={trial.level}
+              date={trial.date}
+              time={trial.time}
+              location={trial.location}
+              ageGroup={trial.ageGroup}
+              cost={trial.cost}
+              description={trial.description}
+              hasDetailsPage={trial.hasDetailsPage}
+              onApply={trial.onApply}
+            />
+          ))}
         </div>
-
-        <div className={styles.trialCard}>
-          <div className={styles.trialHeader}>
-            <h3>London Lions FC Trial</h3>
-            <span className={styles.level}>Amateur</span>
-          </div>
-          <div className={styles.trialInfo}>
-            <p>
-              <strong>Date:</strong> Saturday, 1st March 2025
-            </p>
-            <p>
-              <strong>Time:</strong> 11:00 AM - 2:00 PM
-            </p>
-            <p>
-              <strong>Location:</strong> Hackney Marshes, London
-            </p>
-            <p>
-              <strong>Age Group:</strong> Under 21
-            </p>
-            <p>
-              <strong>Cost:</strong> £20
-            </p>
-          </div>
-          <p className={styles.description}>
-            Join one of London's most successful amateur clubs. Great
-            opportunity for young players to develop their skills in a
-            competitive environment.
-          </p>
-          <button className={styles.applyButton}>Apply Now</button>
-        </div>
-
-        <div className={styles.trialCard}>
-          <div className={styles.trialHeader}>
-            <h3>Bristol Rovers Youth Trial</h3>
-            <span className={styles.level}>Academy</span>
-          </div>
-          <div className={styles.trialInfo}>
-            <p>
-              <strong>Date:</strong> Sunday, 8th March 2025
-            </p>
-            <p>
-              <strong>Time:</strong> 9:00 AM - 3:00 PM
-            </p>
-            <p>
-              <strong>Location:</strong> Memorial Stadium, Bristol
-            </p>
-            <p>
-              <strong>Age Group:</strong> Under 16
-            </p>
-            <p>
-              <strong>Cost:</strong> £35
-            </p>
-          </div>
-          <p className={styles.description}>
-            Youth trial for talented players under 16. Bristol Rovers are
-            looking for the next generation of stars to join their academy
-            system.
-          </p>
-          <button className={styles.applyButton}>Apply Now</button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
