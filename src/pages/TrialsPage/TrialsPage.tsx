@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './TrialsPage.module.scss';
 
 const TrialsPage: React.FC = () => {
@@ -53,7 +54,14 @@ const TrialsPage: React.FC = () => {
       <div className={styles.trials}>
         <div className={styles.trialCard}>
           <div className={styles.trialHeader}>
-            <h3>Manchester United Academy Trial</h3>
+            <h3>
+              <Link
+                to="/trials/manchester-united-academy"
+                className={styles.trialTitle}
+              >
+                Manchester United Academy Trial
+              </Link>
+            </h3>
             <span className={styles.level}>Academy</span>
           </div>
           <div className={styles.trialInfo}>
@@ -78,18 +86,32 @@ const TrialsPage: React.FC = () => {
             professional scouts. This is an excellent opportunity for young
             players to be assessed by one of England's top clubs.
           </p>
-          <button
-            className={styles.applyButton}
-            onClick={() => alert('Applied for Manchester United Academy Trial')}
-            aria-label="Apply for Manchester United Academy Trial"
-          >
-            Apply Now
-          </button>
+          <div className={styles.buttonGroup}>
+            <Link
+              to="/trials/manchester-united-academy"
+              className={styles.viewButton}
+            >
+              View Details
+            </Link>
+            <button
+              className={styles.applyButton}
+              onClick={() =>
+                alert('Applied for Manchester United Academy Trial')
+              }
+              aria-label="Apply for Manchester United Academy Trial"
+            >
+              Apply Now
+            </button>
+          </div>
         </div>
 
         <div className={styles.trialCard}>
           <div className={styles.trialHeader}>
-            <h3>City FC Open Trial</h3>
+            <h3>
+              <Link to="/trials/city-fc-open" className={styles.trialTitle}>
+                City FC Open Trial
+              </Link>
+            </h3>
             <span className={styles.level}>Semi-Professional</span>
           </div>
           <div className={styles.trialInfo}>
@@ -114,7 +136,12 @@ const TrialsPage: React.FC = () => {
             semi-professional team. All positions available with immediate
             opportunities for the right candidates.
           </p>
-          <button className={styles.applyButton}>Apply Now</button>
+          <div className={styles.buttonGroup}>
+            <Link to="/trials/city-fc-open" className={styles.viewButton}>
+              View Details
+            </Link>
+            <button className={styles.applyButton}>Apply Now</button>
+          </div>
         </div>
 
         <div className={styles.trialCard}>

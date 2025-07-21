@@ -1,0 +1,403 @@
+/* TrialDetailsPage Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.notFound {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.notFound h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.notFound p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.backButton {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.backButton:hover {
+  background: var(--secondary-color);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.breadcrumbLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--secondary-color);
+}
+
+.breadcrumbSeparator {
+  color: var(--text-secondary);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-secondary);
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.titleSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+}
+
+.level {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.level.academy {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+}
+
+.level.semi-professional {
+  background: linear-gradient(135deg, #059669, #0d9488);
+  color: white;
+}
+
+.level.professional {
+  background: linear-gradient(135deg, #dc2626, #ea580c);
+  color: white;
+}
+
+.level.amateur {
+  background: linear-gradient(135deg, #7c2d12, #a16207);
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0 0 20px 0;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailItem strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.detailItem span {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.description {
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.description p {
+  margin: 0 0 16px 0;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 24px;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.applyCard {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color-light);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.applyCard h3 {
+  font-size: 1.5rem;
+  margin: 0 0 12px 0;
+}
+
+.applyCard p {
+  margin: 0 0 20px 0;
+  opacity: 0.9;
+}
+
+.applyButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-color-light);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.applyButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.applyNote {
+  font-size: 0.8rem;
+  margin: 16px 0 0 0;
+  opacity: 0.8;
+}
+
+.clubInfo,
+.contactInfo {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.clubInfo h3,
+.contactInfo h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 0 0 16px 0;
+}
+
+.clubDetails,
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.clubDetail,
+.contactDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.clubDetail:last-child,
+.contactDetail:last-child {
+  border-bottom: none;
+}
+
+.clubDetail strong,
+.contactDetail strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.clubDetail span,
+.contactDetail span {
+  color: var(--text-secondary);
+}
+
+.clubDetail a,
+.contactDetail a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.clubDetail a:hover,
+.contactDetail a:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+    min-width: auto;
+  }
+
+  .titleSection {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .sidebar {
+    order: -1;
+  }
+
+  .clubDetail,
+  .contactDetail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .applyCard {
+    padding: 20px;
+  }
+}
+
+/* Theme Support */
+:global(.app.dark) .section,
+:global(.app.dark) .clubInfo,
+:global(.app.dark) .contactInfo {
+  background: var(--dark-bg-secondary);
+  border-color: var(--dark-border);
+}
+
+:global(.app.orange) .level.academy {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+}
+
+:global(.app.orange) .level.semi-professional {
+  background: linear-gradient(135deg, #c2410c, #9a3412);
+}
+
+:global(.app.orange) .applyCard {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+}
