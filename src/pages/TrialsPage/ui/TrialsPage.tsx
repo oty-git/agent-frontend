@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getTrials } from '../../shared/api/trials';
-import { TrialCard, Trial } from '../../entities/trial';
+import { getTrials } from '../../../shared/api/trials';
+import { TrialCard, Trial } from '../../../entities/trial';
 import styles from './TrialsPage.module.scss';
 
 const TrialsPage: React.FC = () => {
